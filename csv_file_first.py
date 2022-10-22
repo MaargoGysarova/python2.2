@@ -35,4 +35,4 @@ if __name__ == '__main__':
 
     write_into_csv(way_to_dataset, ways_to_files)
 
-    print("Работа окончена")
+    print("Работа окончена(часть 1)")
