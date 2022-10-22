@@ -11,13 +11,12 @@ def write_into_csv(way_to_dataset, way_to_files):
             way_to_file = f'dataset/{way_to_files[i]}'
             file_writer.writerow(
                 [f'{way_to_dataset + "/" + way_to_files[i]}', f'  /dataset/{way_to_files[i]}',
-                os.path.basename(os.path.dirname(way_to_file))])
+                 os.path.basename(os.path.dirname(way_to_file))])
 
 
 def get_way_to_files(way_to_dataset, name):
     ways_to_files = list()
     for i in range(0, len(name)):
-        # folder_way = way_to_dataset + '/' + name[i]
         folder_way = way_to_dataset + '/' + name[i]
         num_of_files = os.listdir(folder_way)  # кол-во файлов
 
