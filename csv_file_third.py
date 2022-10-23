@@ -10,7 +10,6 @@ def write_into_csv(way_to_dataset, way_to_files, name):
     with open("dataset_csv_third", 'w+', encoding='utf-8', newline='') as file:
         file_writer = csv.writer(file, delimiter=';')
         file_writer.writerow(["Absolute way", "Relative way", "Class"])
-        m = len(way_to_files)
 
         for i in range(0, len(way_to_files)):
             if i < num_names[0]:

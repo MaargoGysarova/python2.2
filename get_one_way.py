@@ -1,8 +1,7 @@
 import os
 import random
 
-def get_way(name, num_of_file , i , ):
-    if i==
+def get_way(name, num_of_file ):
     way_to_dataset = os.path.abspath("../python2.1/dataset")
     return f'{way_to_dataset}/{name}/{num_of_file:04}.jpg'
 
