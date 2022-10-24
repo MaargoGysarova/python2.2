@@ -1,7 +1,15 @@
 import os
 import random
+from typing import List
 
-def get_way(name, num_of_file ):
+
+def get_way(name: List, num_of_file: int ) -> str:
+    """
+
+    :param name: names of images
+    :param num_of_file: num of images
+    :return: way to file
+    """
     way_to_dataset = os.path.abspath("../python2.1/dataset")
     return f'{way_to_dataset}/{name}/{num_of_file:04}.jpg'
 

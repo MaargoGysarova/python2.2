@@ -2,9 +2,17 @@ import csv
 import os
 import shutil
 from csv_file_first import get_way_to_files
+from typing import List
 
 
-def write_into_csv(way_to_dataset, way_to_files, name):
+def write_into_csv(way_to_dataset: str, way_to_files: List, name: List) -> None:
+    """
+
+    :param way_to_dataset: way to folder "dataset"
+    :param way_to_files: ways to each file in folder
+    :param name: names of images
+    :return: None
+    """
     names = list()
     num_names = get_way_to_files(way_to_dataset, name)[1]
     i = 0
@@ -23,7 +31,13 @@ def write_into_csv(way_to_dataset, way_to_files, name):
                      name[1]])
 
 
-def get_way_to_files2(way_to_dataset, name):
+def get_way_to_files2(way_to_dataset: str, name: List) -> List:
+    """
+
+    :param way_to_dataset: way to folder "dataset"
+    :param name: names of images
+    :return: list of ways to files
+    """
     num_names = get_way_to_files(way_to_dataset, name)[1]
     ways_to_files = get_way_to_files(way_to_dataset, name)[0]
     ways_to_files_second = list()
