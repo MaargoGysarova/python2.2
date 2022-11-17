@@ -43,7 +43,7 @@ def get_way_to_files(way_to_dataset: str, name: List) -> List:
 
 def main():
     name = ['tiger', 'leopard']
-    way_to_dataset = os.path.abspath("../python2.1/dataset")
+    way_to_dataset = os.path.abspath("../../python2.1/dataset")
     ways_to_files = get_way_to_files(way_to_dataset, name)[0]
     write_into_csv(way_to_dataset, ways_to_files)
 

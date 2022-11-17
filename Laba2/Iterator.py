@@ -1,5 +1,4 @@
-import csv
-from get_one_way import main
+from Laba3.get_one_way import main
 
 
 class SimpleIterator:
@@ -9,9 +8,12 @@ class SimpleIterator:
         self.class_name = class_name
         self.file_name = file_name
         self.rows = []
-        self.rows = main()[0]
-        print(self.rows)
-        self.num = main()[1]
+        if self.class_name == 'tiger':
+            self.rows = main(0)[0]
+            self.num = main(0)[1]
+        else:
+            self.rows = main(1)[0]
+            self.num = main(1)[1]
 
     def __iter__(self):
         return self
@@ -25,7 +27,7 @@ class SimpleIterator:
             raise StopIteration
 
 
-
 if __name__ == '__main__':
     it = SimpleIterator("tiger", "dataset_csv_first")
-    print(next(it))
+    for i in range(0, 200):
+        print(next(it))

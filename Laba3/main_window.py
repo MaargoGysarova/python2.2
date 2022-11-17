@@ -12,6 +12,7 @@ from Laba2 import Iterator
 
 
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -91,6 +92,7 @@ class MainWindow(QMainWindow):
         self.tiger_iterator = Iterator.SimpleIterator('tiger', 'dataset_csv_first')
         self.leo_iterator = Iterator.SimpleIterator('leopard', 'dataset_csv_first')
 
+
     def click_button_1(self):
         csv_file_first.main()
 
@@ -105,19 +107,19 @@ class MainWindow(QMainWindow):
         self.statusBar().showMessage(msg, 2000)
         self.statusBar().setStyleSheet("background-color: #171982; color: #000000;")
 
+    def next_leo(self):
+        self.image_leo.setPixmap(QPixmap(next(self.leo_iterator)))
+        self.image_leo.setGeometry(620, 100, 400, 400)
+        self.image_leo.show()
+
     def next_tiger(self):
-        self.image_way_tiget = next(self.tiger_iterator)
-        while self.image_way_tiger == None:
-            self.image_way_tiger = next(self.tiger_iterator)
-        self.image_tiger.setPixmap(QPixmap(self.image_way_tiget))
-        self.image_tiger.setGeometry(50, 100, 500, 500)
+        self.image_tiger.setPixmap(QPixmap(next(self.tiger_iterator)))
+        self.image_tiger.setGeometry(160, 100, 400, 400)
         self.image_tiger.show()
 
-    def next_leo(self):
-        self.image_way_leo = next(self.leo_iterator)
-        self.image_leo.setPixmap(QPixmap(self.image_way_leo))
-        self.image_leo.setGeometry(50, 100, 500, 500)
-        print(self.image_leo.isNull())
+
+
+
 
 
 app = QApplication(sys.argv)

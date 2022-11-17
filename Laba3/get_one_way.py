@@ -1,9 +1,7 @@
 import os
-import random
-from typing import List
 
 
-def get_way(num_of_file: int) -> str:
+def get_way(num_of_file: int, name,index) -> str:
     """
 
     :param name: names of images
@@ -11,21 +9,18 @@ def get_way(num_of_file: int) -> str:
     :return: way to file
     """
     way_to_dataset = os.path.abspath("../../python2.1/dataset")
-    return f'{way_to_dataset}/tiger/{num_of_file:04}.jpg'
+    return f'{way_to_dataset}/{name[index]}/{num_of_file:04}.jpg'
 
 
-def main():
+def main(index):
     way_to_dataset = os.path.abspath("../../python2.1/dataset")
     name = ['tiger', 'leopard']
-    print("tiger-1 leopard-2")
-    folder_way = way_to_dataset + '/' + name[0]
+    folder_way = way_to_dataset + '/' + name[index]
     num_of_files = os.listdir(folder_way)
     rows = []
     for file in range(1, len(num_of_files) + 1):
-        rows.append(get_way(file))
+        rows.append(get_way(file, name ,index))
         file += 1
     return rows, len(num_of_files)
 
 
-if __name__ == '__main__':
-    main()
