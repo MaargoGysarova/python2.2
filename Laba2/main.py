@@ -14,6 +14,6 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
-    print( os.path.basename(os.path.dirname('/dataset/tiger/0001.jpg')))
+    print(os.path.splitext(os.path.basename('/dataset/tiger/bear_0001.jpg'))[0])
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

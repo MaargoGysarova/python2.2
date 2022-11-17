@@ -1,19 +1,17 @@
 import csv
+from get_one_way import main
 
 
 class SimpleIterator:
     def __init__(self, class_name, file_name):  # метка класса, имя файла csv
-        self.num = 0
+        self.num = -1
         self.counter = -1
         self.class_name = class_name
         self.file_name = file_name
-        self.rows = list()
-        with open(file_name, encoding='utf-8', newline='') as file:
-            reader = csv.reader(file)
-            for row in reader:
-                if row[2] == class_name:
-                    self.rows.append(row[0])
-                    self.num += 1
+        self.rows = []
+        self.rows = main()[0]
+        print(self.rows)
+        self.num = main()[1]
 
     def __iter__(self):
         return self
@@ -25,3 +23,9 @@ class SimpleIterator:
         else:
             print("None")
             raise StopIteration
+
+
+
+if __name__ == '__main__':
+    it = SimpleIterator("tiger", "dataset_csv_first")
+    print(next(it))

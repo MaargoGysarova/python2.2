@@ -2,7 +2,7 @@ import csv
 import os
 import shutil
 import random
-from csv_file_first import get_way_to_files
+from Laba2.csv_file_first import get_way_to_files
 from typing import List
 
 
@@ -41,22 +41,25 @@ def get_way_to_files3(way_to_dataset: str, name: List) -> List:
     ways_to_files = get_way_to_files(way_to_dataset, name)[0]
     ways_to_files_second = list()
     for file in ways_to_files:
-        file = "../python2.1/dataset" + "/" + file
+        file = "../../python2.1/dataset" + "/" + file
         i = random.randint(0, 10000)
-        way_to_file = os.path.abspath("../python2.1") + "/" + f'dataset_random_num/{i:04}.jpg '
+        way_to_file = os.path.abspath("../../python2.1") + "/" + f'dataset_random_num/{i:04}.jpg '
         ways_to_files_second.append(way_to_file)
         shutil.copyfile(file, way_to_file)
     return ways_to_files_second
 
-
-if __name__ == '__main__':
+def main():
     name = ['tiger', 'leopard']
-    if os.path.isdir('../python2.1/dataset_random_num') == 1:
-        shutil.rmtree('../python2.1/dataset_random_num')
-    os.mkdir('../python2.1/dataset_random_num')
-    way_to_dataset = os.path.abspath("../python2.1/dataset")
+    if os.path.isdir('../../python2.1/dataset_random_num') == 1:
+        shutil.rmtree('../../python2.1/dataset_random_num')
+    os.mkdir('../../python2.1/dataset_random_num')
+    way_to_dataset = os.path.abspath("../../python2.1/dataset")
     ways_to_files = get_way_to_files3(way_to_dataset, name)
 
     write_into_csv(way_to_dataset, ways_to_files, name)
 
     print("Работа окончена(часть 3)")
+
+
+if __name__ == '__main__':
+    main()

@@ -21,7 +21,7 @@ def write_into_csv(way_to_dataset: str, ways_to_files: List) -> None:
                  os.path.basename(os.path.dirname(way_to_file))])
 
 
-def get_way_to_files(way_to_dataset: str, name: List) ->List:
+def get_way_to_files(way_to_dataset: str, name: List) -> List:
     """
 
     :param way_to_dataset: way to folder "dataset"
@@ -41,10 +41,14 @@ def get_way_to_files(way_to_dataset: str, name: List) ->List:
     return [ways_to_files, num_names]
 
 
-if __name__ == '__main__':
+def main():
     name = ['tiger', 'leopard']
     way_to_dataset = os.path.abspath("../python2.1/dataset")
     ways_to_files = get_way_to_files(way_to_dataset, name)[0]
     write_into_csv(way_to_dataset, ways_to_files)
 
     print("Работа окончена(часть 1)")
+
+
+if __name__ == '__main__':
+    main()
