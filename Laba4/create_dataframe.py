@@ -24,6 +24,10 @@ def create_histogram(df, mark_class):
         histr = cv2.calcHist([img], [i], None, [256], [0, 256])
         plt.plot(histr, color=col)
         plt.xlim([0, 256])
+
+    plt.ylabel('Number of pixels')
+    plt.xlabel('Pixel value')
+    plt.title('Histogram')
     plt.show()
 
     return result
@@ -140,8 +144,8 @@ def create_dataframe(path_of_csv):
 
 if __name__ == '__main__':
     path_to_csv = "../Laba2/dataset_csv_first.csv"
-    create_dataframe(path_to_csv)
-    filter_dataframe_mark_class(create_dataframe(path_to_csv), "Num_class", "0")
-    filter_dataframe_wight_and_height_and_mark(create_dataframe(path_to_csv), "Image_width", "Image_hight", "Num_class", 400, 400, "0")
-    group_dataframe_pixel(create_dataframe(path_to_csv))
+    #create_dataframe(path_to_csv)
+    #filter_dataframe_mark_class(create_dataframe(path_to_csv), "Num_class", "0")
+    #filter_dataframe_wight_and_height_and_mark(create_dataframe(path_to_csv), "Image_width", "Image_hight", "Num_class", 400, 400, "0")
+    #group_dataframe_pixel(create_dataframe(path_to_csv))
     create_histogram(create_dataframe(path_to_csv), "0")
