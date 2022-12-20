@@ -1,4 +1,3 @@
-# create dataframe from csv file 6 columns
 
 import pandas as pd
 import csv
@@ -8,9 +7,9 @@ import random
 import cv2
 
 
-def create_histogram(df, mark_class):
+def create_histogram(df: pd.DataFrame, mark_class: int):
     """
-    Создание гистограммы по метке класса
+    Создание гистограммы по метке класса и ее вывод
     :return: histogram
     """
     result = [[], [], []]
@@ -33,7 +32,7 @@ def create_histogram(df, mark_class):
     return result
 
 
-def read_csv(name_of_csv, num_of_columns):
+def read_csv(name_of_csv: str, num_of_columns: int):
     """
     Чтение csv файла по колонкам
     :return: list of lists
@@ -51,7 +50,7 @@ def read_csv(name_of_csv, num_of_columns):
     return read_list
 
 
-def filter_dataframe_mark_class(df, column, value):
+def filter_dataframe_mark_class(df: pd.DataFrame, column: str, value: int):
     """
     Фильтрация по метке класса
     :return: dataframe
@@ -63,7 +62,7 @@ def filter_dataframe_mark_class(df, column, value):
     return df
 
 
-def filter_dataframe_wight_and_height_and_mark(df, column1, column2, column3, value1, value2, value3):
+def filter_dataframe_wight_and_height_and_mark(df: pd.DataFrame, column1: str, column2: str, column3: str, value1: int, value2: int, value3: int):
     """
     Фильрация по ширине, высоте и метке класса
     :return: dataframe
@@ -75,7 +74,7 @@ def filter_dataframe_wight_and_height_and_mark(df, column1, column2, column3, va
     return df
 
 
-def group_dataframe_pixel(df):
+def group_dataframe_pixel(df: pd.DataFrame):
     """
     Группировка по количеству пикселей
     :return: dataframe
@@ -95,7 +94,7 @@ def group_dataframe_pixel(df):
     df1.to_csv("group_dataframe_pixel.csv", sep='\t', encoding='utf-8')
 
 
-def create_dataframe(path_of_csv):
+def create_dataframe(path_of_csv: str):
     """
     Создание dataframe из csv файла
     :return: dataframe
