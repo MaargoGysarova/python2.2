@@ -34,7 +34,7 @@ def get_way_to_files(way_to_dataset: str, name: List) -> List:
         folder_way = way_to_dataset + '/' + name[i]
         num_of_files = os.listdir(folder_way)  # кол-во файлов
         num_names.append(len(num_of_files))
-        for file_num in range(1, len(num_of_files) + 1):
+        for file_num in range(1, len(num_of_files) - 1):
             way_to_file = name[i] + f'/{file_num:04}' + '.jpg'
             ways_to_files.append(way_to_file)
 

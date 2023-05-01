@@ -40,13 +40,15 @@ def get_way_to_files3(way_to_dataset: str, name: List) -> List:
     num_names = get_way_to_files(way_to_dataset, name)[1]
     ways_to_files = get_way_to_files(way_to_dataset, name)[0]
     ways_to_files_second = list()
+    i = 0
     for file in ways_to_files:
         file = "../../python2.1/dataset" + "/" + file
-        i = random.randint(0, 10000)
-        way_to_file = os.path.abspath("../../python2.1") + "/" + f'dataset_random_num/{i:04}.jpg '
+        i += 1
+        way_to_file = os.path.abspath("../../python2.1") + "/" + f'dataset_random_num/{i}.jpg '
         ways_to_files_second.append(way_to_file)
         shutil.copyfile(file, way_to_file)
     return ways_to_files_second
+
 
 def main():
     name = ['tiger', 'leopard']
